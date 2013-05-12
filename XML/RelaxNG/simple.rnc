@@ -1,0 +1,7 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+element persona { 
+    element nombre {text},
+    element apellidos {text},
+    element edad {xsd:decimal}
+}

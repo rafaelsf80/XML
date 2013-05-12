@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+
+    <xs:element name="Contacto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="DatosPersonales"  type="DatosPersonales"></xs:element>
+                <xs:element name="Telefonos"        type="Telefonos"></xs:element>
+                <xs:element name="Direcciones"      type="Direcciones"></xs:element>
+                <xs:element name="DireccionEmail"   type="xs:string"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <!-- DatosPersonales -->
+    <xs:complexType name="DatosPersonales">
+        <xs:sequence>
+            <xs:element name="Tratamiento"  type="xs:string"/>
+            <xs:element name="Nombre"       type="xs:string"/>
+            <xs:element name="Apellidos"    type="xs:string"/>
+            <xs:element name="Empresa"      type="xs:string"/>
+            <xs:element name="Cargo"        type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <!-- Telefonos -->
+    <xs:complexType name="Telefonos">
+        <xs:sequence>
+            <xs:element name="Numero" type="AtributoTelefono" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="AtributoTelefono">
+        <xs:simpleContent>
+            <xs:extension base="PatronTelefono">
+                <xs:attribute name="Tipo" type="RestriccionNumeracion" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="RestriccionNumeracion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="FIJO"/>
+            <xs:enumeration value="Domicilio"/>
+            <xs:enumeration value="FAX"/>
+            <xs:enumeration value="MOVIL"/>
+       </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PatronTelefono">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{9}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    
+     
+    <!-- Direcciones-->
+    <xs:complexType name="Direcciones">
+        <xs:sequence>
+            <xs:element name="Direccion" type="AtributoDireccion" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="AtributoDireccion">
+        <xs:sequence>
+            <xs:element name="Calle"           type="xs:string"/>
+            <xs:element name="Localidad"       type="xs:string"/>
+            <xs:element name="Provincia"       type="xs:string"/>
+            <xs:element name="CodigoPostal"    type="xs:integer"/>
+            <xs:element name="Pais"            type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="Direccion" type="RestriccionDireccion"/>
+    </xs:complexType>
+   
+    <xs:simpleType name="RestriccionDireccion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Laboral"/>
+            <xs:enumeration value="Personal"/>
+            <xs:enumeration value="Otra"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+</xs:schema>
+
+

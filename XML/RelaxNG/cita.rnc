@@ -1,0 +1,14 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+element Cita { 
+    element Titulo {text},
+    element Direccion {text},
+    element Fecha {
+           element FechaInicio {text} ,
+           element FechaFin {text} ,
+           element Duracion  {
+            attribute Tipo {"Meses"|"Dias"|"Horas"|"Semanas"|"Minutos"}, xsd:integer
+           } 
+     },
+     element Notas {text}
+    }

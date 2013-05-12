@@ -1,0 +1,30 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+element Contacto {
+    element DatosPersonales {
+        element Tratamiento {text} ,
+        element Nombre {text} ,
+        element Apellidos {text} ,
+        element Empresa {text} ,
+        element Cargo {text}
+     },
+     element Telefonos {
+            element Numero  {
+               attribute Tipo {"Domicilio" | "Movil"}, xsd:decimal
+            }*
+      },
+    element Direcciones {
+        element Direccion {
+            attribute Tipo {"Laboral"| "Personal"},
+            element Destinatarios {
+                element Calle {text},
+                element Localidad {text},
+                element Provincia {text},
+                element CodigoPostal {xsd:decimal},
+                element Pais {text}
+            }
+       }+
+    },
+    element DireccionEmail {text}
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <a:documentation></a:documentation>
+        <element name="Cita">
+            <element name="Titulo"><text/></element>
+            <element name="Direccion"><text/></element>
+            <element name="Fecha">
+                <element name="FechaInicio"><data type="date"/></element>
+                <element name="FechaFin"><data type="date"/></element>
+                <element name="Duracion">
+                    <attribute name="Tipo">
+                        <choice>
+                         <value>meses</value>
+                         <value>semanas</value>
+                         <value>dias</value>
+                         <value>horas</value>
+                         <value>minutos</value>
+                        </choice>    
+                    </attribute>
+                    <data type="integer"/>
+                </element>
+            </element>
+            <element name="Notas"><text/></element>
+        </element>
+    </start>
+</grammar>

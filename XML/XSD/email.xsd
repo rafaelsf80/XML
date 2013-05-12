@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Email">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Cabecera" type="Cabecera"></xs:element>
+            <xs:element name="Cuerpo"   type="xs:string"></xs:element>           
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+    
+    
+    <!-- Cabecera -->
+    <xs:complexType name="Cabecera">
+        <xs:sequence>
+            <xs:element name="Remitente"      type="xs:string"></xs:element>
+            <xs:element name="Destinatarios"  type="Destinatarios"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    
+    <!-- Destinatarios -->
+    <xs:complexType name="Destinatarios">
+        <xs:sequence>
+            <xs:element name="Para"         type="xs:string" maxOccurs="unbounded"></xs:element>
+            <xs:element name="Copia"        type="xs:string" maxOccurs="unbounded" minOccurs="0"></xs:element>
+            <xs:element name="CopiaOculta"  type="xs:string" maxOccurs="unbounded" minOccurs="0"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- PATRON 
+    <xs:element name="patron">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    -->
+    
+            
+</xs:schema>
+
+
+

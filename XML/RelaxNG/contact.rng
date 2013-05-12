@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="Contacto">
+            <element name="DatosPersonales">
+                <element name="Tratamiento"><text/></element>
+                <element name="Nombre"><text/></element>
+                <element name="Apellidos"><text/></element>
+                <element name="Empresa"><text/></element>
+                <element name="Cargo"><text/></element>
+            </element>
+            
+            <element name="Telefonos">
+                <oneOrMore>
+                    <element name="Numero">
+                        <attribute name="Tipo">
+                            <choice>
+                                <value>Domicilio</value>
+                                <value>Movil</value>
+                            </choice>
+                        </attribute>
+                        <data type="string">
+                            <param name="pattern">[0-9]{9}</param>
+                        </data>
+                    </element>
+                </oneOrMore>
+            </element>
+                                
+            <element name="Direcciones">
+                <oneOrMore>
+                <element name="Direccion">
+                    <attribute name="Tipo">
+                        <choice>
+                            <value>Laboral</value>
+                            <value>Personal</value>
+                        </choice>
+                    </attribute>
+                    <element name="Calle"><text/></element>
+                    <element name="Localidad"><text/></element>
+                    <element name="Provincia"><text/></element>
+                    <element name="CodigoPostal">
+                        <data type="string">
+                            <param name="pattern">[0-9]{5}</param>
+                        </data>
+                    </element>
+                    <element name="Pais"><text/></element>
+                </element>
+                </oneOrMore>
+             </element>
+            
+            <element name="DireccionEmail"><text/></element>
+        </element>
+    </start>
+</grammar>

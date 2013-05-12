@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+    xmlns="http://relaxng.org/ns/structure/1.0"
+    xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <element name="Email">
+            <element name="Cabecera">
+                <element name="Remitente"><text/></element>
+                <element name="Destinatarios">
+                    <oneOrMore><element name="Para"><text/></element></oneOrMore>
+                    <zeroOrMore><element name="Copia"><text/></element></zeroOrMore>
+                    <zeroOrMore><element name="Copiaoculta"><text/></element></zeroOrMore>
+                    <optional><element name="AcuseRecibo"><empty/></element></optional>
+                </element>
+            </element>
+            <element name="Cuerpo"><text/></element>
+        </element>
+    </start>
+</grammar>

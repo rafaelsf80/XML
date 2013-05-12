@@ -1,0 +1,15 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+element email { 
+    element Cabecera {
+        element Remitente {text} ,
+        element Destinatarios {
+            element Para {text}+ ,
+            element Copia {text}* ,
+            element CopiaOculta {text}*
+            
+        },
+        element AcuseRecibo {text}?,
+        element Cuerpo {text}
+    }
+}

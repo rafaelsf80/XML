@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Articulos>
+    <Articulo>
+        <Nombre>Libro</Nombre>
+        <Precio>100 EUROS</Precio>
+    </Articulo>
+    <Articulo>
+        <Nombre>Cuaderno</Nombre>
+        <Precio>20 EUROS</Precio>
+    </Articulo>
+    <Articulo>
+        <Nombre>Estuche</Nombre>
+        <Precio>15 EUROS</Precio>
+    </Articulo>
+</Articulos>
+
+

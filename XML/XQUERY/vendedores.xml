@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Vendedores>
+    <Vendedor>
+        <Nombre>Pepe Sanchez</Nombre>
+        <Zona>Madrid</Zona>
+    </Vendedor>
+    <Vendedor>
+        <Nombre>Juan Lopez</Nombre>
+        <Zona>Castilla</Zona>
+    </Vendedor>
+</Vendedores>
+

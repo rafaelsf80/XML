@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+<xs:element name="Producto">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Nombre" type="xs:string"></xs:element>
+            <xs:element name="Tipo" type="xs:string"></xs:element>
+            <xs:element name="Descripción" type="xs:string"></xs:element>
+            <xs:element name="Precio" type="xs:decimal"></xs:element>
+            <xs:element name="Ancho" type="xs:decimal"></xs:element>
+            <xs:element name="Alto" type="xs:decimal"></xs:element>
+            <xs:element name="Fondo" type="xs:decimal"></xs:element>
+            <xs:element name="Peso" type="xs:decimal"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

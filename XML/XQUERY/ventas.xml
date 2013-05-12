@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ventas>
+    <Venta>    
+        <Vendedor>Pepe Sanchez</Vendedor>
+        <Zona>Madrid</Zona>
+        <Articulo>Libro</Articulo>
+        <Precio>100</Precio>
+        <Fecha>2010-06-07</Fecha>
+    </Venta>
+    <Venta>    
+        <Vendedor>Juan Sanchez</Vendedor>
+        <Zona>Barcelona</Zona>
+        <Articulo>Libro</Articulo>
+        <Precio>90</Precio>
+        <Fecha>2008-01-01</Fecha>
+    </Venta>
+    <Venta>    
+        <Vendedor>Juan Sanchez</Vendedor>
+        <Zona>Barcelona</Zona>
+        <Articulo>Estuche</Articulo>
+        <Precio>15</Precio>
+        <Fecha>2008-03-01</Fecha>
+    </Venta>
+</Ventas>
